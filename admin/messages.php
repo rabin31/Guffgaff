@@ -18,11 +18,10 @@
     <div class="flex h-full">
         <div class="w-1/4 bg-blue-600 text-white flex flex-col justify-between py-8 px-4">
             <div>
-                <h1 class="text-4xl font-bold mb-6">guffgaff</h1>
+                <h1 class="text-4xl font-bold mb-6">Messages</h1>
                 <nav class="space-y-4">
                     <a href="index.php" class="block text-lg hover:underline">Dashboard</a>
                     <a href="users1.php" class="block text-lg hover:underline">Users</a>
-                    <a href="messages.php" class="block text-lg hover:underline">Messages</a>
                 </nav>
             </div>
             <a href="logout.php" class="text-red-500 hover:text-red-700 text-lg">LogOut</a>
@@ -45,7 +44,7 @@
                         $servername = "localhost";
                         $username = "root";
                         $password = "";
-                        $database = "chat-app";
+                        $database = "guffgaff";
 
                         $connection = new mysqli($servername, $username, $password, $database);
 

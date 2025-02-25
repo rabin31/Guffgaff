@@ -52,8 +52,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v5m0-5L6 14m3 3l3-3m0 0v-5m6 6V9a3 3 0 00-6 0v5" />
                         </svg>
                     </div>
-                    <h2 class="text-xl font-bold mb-2">Graphic Design</h2>
-                    <p class="text-gray-600">Create stunning visuals and branding materials.</p>
+                    <h2 class="text-xl font-bold mb-2">Send Friend Requests</h2>
+                    <p class="text-gray-600">make new friends in this world</p>
                 </div>
 
             
@@ -63,8 +63,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16m-7 4h7" />
                         </svg>
                     </div>
-                    <h2 class="text-xl font-bold mb-2">Digital Marketing</h2>
-                    <p class="text-gray-600">Grow your online presence and reach your target audience.</p>
+                    <h2 class="text-xl font-bold mb-2">GuffGaff</h2>
+                    <p class="text-gray-600">Send message in your own language</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,40 @@
 <?php
-include("php/config.php");
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "guffgaff";
+
+$conn = mysqli_connect($hostname, $username, $password, $dbname);
+if (!$conn) {
+    die("Database connection error: " . mysqli_connect_error());
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    $sql = "INSERT INTO contact_us (name, email, message) VALUES ('$name', '$email', '$message')";
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Message sent successfully!'); window.location.href='index.php';</script>";
+    } else {
+        echo "<script>alert('Error sending message. Please try again.'); window.location.href='contact-us.php';</script>";
+    }
+    
+}
+
+mysqli_close($conn);
+?>
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "guffgaff";
+
+$conn = mysqli_connect($hostname, $username, $password, $dbname);
+if (!$conn) {
+  echo "Database connection error".mysqli_connect_error();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,12 +42,10 @@ include("php/config.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
 
- 
     <header class="bg-blue-600 text-white py-8">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold">Contact Us</h1>
@@ -20,30 +53,27 @@ include("php/config.php");
         </div>
     </header>
 
- 
     <section class="py-12">
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
                 <div class="bg-white rounded-lg shadow-md p-6">
                     <h2 class="text-2xl font-semibold mb-4">Send Us a Message</h2>
                     <form action="contact-us.php" method="POST">
                         <div class="mb-4">
                             <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" name="name" id="name" required
-                                class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <input type="text" name="name" id="name" required class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" name="email" id="email" required
-                                class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <input type="email" name="email" id="email" required class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         </div>
                         <div class="mb-4">
                             <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea name="message" id="message" rows="5" required
-                                class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            <textarea name="message" id="message" rows="5" required class="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
                         </div>
-                        <input type="button" id="button" value='Send Message' class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Send Message
+                        </button>
                     </form>
                 </div>
 
@@ -56,7 +86,6 @@ include("php/config.php");
         </div>
     </section>
 
-  
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto text-center">
             <p>&copy; <?= date('Y') ?> GuffGaff. All rights reserved.</p>
@@ -65,15 +94,3 @@ include("php/config.php");
 
 </body>
 </html>
-<?php
-
- $name = $_POST['name'];
- $email = $_POST['email'];
- $message = $_POST['messgae'];
- 
- if(isset($_POST['button'])){
-    $sql = INSERT INTO contact_us(name, email, password) 
-           VALUES("$name", "$email", "$message");
-
- }
-?>

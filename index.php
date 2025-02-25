@@ -6,7 +6,7 @@
 
         <nav class="px-2 py-4 w-full z-20 top-0 left-0">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
-                <a href="/" class="flex items-center">
+                <a href="index.php" class="flex items-center">
                     <img src="php/images/guffgaff_logo_white.png" class="h-6 mr-3 sm:h-9" alt="GuffGaff Logo Logo">
                 </a>
                 <div class="flex md:order-2">
@@ -86,5 +86,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
 </body>
-
 </html>
