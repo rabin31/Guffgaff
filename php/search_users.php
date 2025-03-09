@@ -39,6 +39,6 @@ if (isset($_SESSION['unique_id'])) {
     }
 
   } else {
-    header("location: /sendbox");
+    header("location: /guffgaff");
   }
 ?>

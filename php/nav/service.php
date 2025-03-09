@@ -22,7 +22,7 @@
         }
     </style>
 </head>
-<body class="bg-blue-500 text-white font-sans">
+<body class="bg-blue-800 text-white font-sans">
 
     
     <header class="text-center py-8">

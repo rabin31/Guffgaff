@@ -52,3 +52,26 @@ if(isset($_GET['cancel'])){
         header("location: ../friends.php");
     }
         ?>
+        <?php
+session_start();
+include_once "config.php";
+
+// Ensure the user is logged in
+if (!isset($_SESSION['unique_id'])) {
+  header("location: ../auth/login.php");
+  exit();
+}
+
+if (isset($_GET['delete_friend'])) {
+    $friend_id = $_GET['delete_friend'];
+    $uniqe_id = $_SESSION['unique_id'];
+
+    // Delete the friend from the friends table
+    $delete_query = "DELETE FROM friends WHERE (friend_id = {$uniqe_id} AND unique_id = {$friend_id}) OR (friend_id = {$friend_id} AND unique_id = {$uniqe_id})";
+    if (mysqli_query($conn, $delete_query)) {
+        header("Location: ../friends.php"); // Redirect back to the friends page after deletion
+    } else {
+        echo "Error deleting friend: " . mysqli_error($conn);
+    }
+}
+?>

@@ -20,6 +20,7 @@
                 <nav class="space-y-4">
                     <a href="users1.php" class="block text-lg hover:underline">Users</a>
                     <a href="messages.php" class="block text-lg hover:underline">Messages</a>
+                    <a href="friends.php" class="block text-lg hover:underline">Friends</a>
                 </nav>
             </div>
             <a href="logout.php" class="text-red-500 hover:text-red-700 text-lg">LogOut</a>

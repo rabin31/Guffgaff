@@ -46,7 +46,7 @@ if (!$conn) {
 </head>
 <body class="bg-gray-50">
 
-    <header class="bg-blue-600 text-white py-8">
+    <header class="bg-blue-800 text-white py-8">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold">Contact Us</h1>
             <p class="mt-2 text-lg">We'd love to hear from you! Reach out to us with any questions or feedback.</p>

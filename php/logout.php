@@ -15,6 +15,6 @@
             header("location: ../users.php");
         }
     }else{  
-        header("location: /sendbox");
+        header("location: /guffgaff");
     }
 ?>

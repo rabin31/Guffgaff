@@ -8,7 +8,6 @@ if (!isset($_SESSION['unique_id'])) {
 ?>
 <?php include_once "header.php"; ?>
 
-
 <section class="bg-gray-900 bg-cover bg-[url('php/images/background.jpg')]">
   <div class="px-4 mx-auto max-w-screen-xl min-h-screen z-10 relative">
     <?php require 'comp/_nav.php' ?>
@@ -21,7 +20,6 @@ if (!isset($_SESSION['unique_id'])) {
       <div class="flex justify-between items-center py-4 bg-white">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tbody>
-
             <?php
             $uniqe_id = $_SESSION['unique_id'];
             $pending = 'Pending';
@@ -32,7 +30,6 @@ if (!isset($_SESSION['unique_id'])) {
                 if ($row['to_req_id'] === $uniqe_id) {
                   echo '
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        
                         <th scope="row" class="flex items-center py-4 px-2 text-gray-900 whitespace-nowrap dark:text-white">
                             <img class="w-10 rounded-full" src=php/images/pfp/' . $row['img'] . ' alt="Jese image">
                             <div class="pl-3">
@@ -51,43 +48,34 @@ if (!isset($_SESSION['unique_id'])) {
                 } else {
                   echo '
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                      
-                <th scope="row" class="flex items-center py-4 px-2 text-gray-900 whitespace-nowrap dark:text-white">
-                    <div class="pl-3">
-                        <div class="text-base font-semibold">No any Friend Request Available</div>
-                    </div>  
-                </th>
-                <td role="columnheader"
-                    class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4">
-                    </td>
-                  <td role="columnheader"
-                    class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4">
-                  </td>
-              </tr>';
+                       <th scope="row" class="flex items-center py-4 px-2 text-gray-900 whitespace-nowrap dark:text-white">
+                           <div class="pl-3">
+                               <div class="text-base font-semibold">No any Friend Request Available</div>
+                           </div>  
+                       </th>
+                       <td role="columnheader" class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4"></td>
+                       <td role="columnheader" class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4"></td>
+                   </tr>';
                 }
               }
             } else {
               echo '
                           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    
-              <th scope="row" class="flex items-center py-4 px-2 text-gray-900 whitespace-nowrap dark:text-white">
-                  <div class="pl-3">
-                      <div class="text-base font-semibold">No any Friend Request Available</div>
-                  </div>  
-              </th>
-              <td role="columnheader"
-                  class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4">
-                  </td>
-                <td role="columnheader"
-                  class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4">
-                </td>
-            </tr>';
+                    <th scope="row" class="flex items-center py-4 px-2 text-gray-900 whitespace-nowrap dark:text-white">
+                        <div class="pl-3">
+                            <div class="text-base font-semibold">No any Friend Request Available</div>
+                        </div>  
+                    </th>
+                    <td role="columnheader" class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4"></td>
+                    <td role="columnheader" class="text-gray-600 font-normal pr-8 text-left text-sm tracking-normal leading-4"></td>
+                </tr>';
             }
             ?>
           </tbody>
         </table>
       </div>
     </div>
+
     <?php
     if (isset($_GET['searchTerm'])) {
     } else {
@@ -124,6 +112,9 @@ if (!isset($_SESSION['unique_id'])) {
             <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center">Message</button>
             </a>
           </td>
+          <td class="py-4 px-3">
+            <a href="php/freq.php?delete_friend=' . $row['unique_id'] . '" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete Friend</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -134,9 +125,6 @@ if (!isset($_SESSION['unique_id'])) {
       echo $output;
     }
     ?>
-
-
-
   </div>
 </section>
 
@@ -145,5 +133,4 @@ if (!isset($_SESSION['unique_id'])) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
 </body>
-
 </html>

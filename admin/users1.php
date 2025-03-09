@@ -37,6 +37,7 @@
                 <nav class="space-y-4">
                     <a href="index.php" class="block text-lg hover:underline">Dashboard</a>
                     <a href="messages.php" class="block text-lg hover:underline">Messages</a>
+                    <a href="friends.php" class="block text-lg hover:underline">Friends</a>
                 </nav>
             </div>
             <a href="logout.php" class="text-red-500 hover:text-red-700 text-lg">LogOut</a>
@@ -49,7 +50,6 @@
                     <thead>
                         <tr class="bg-blue-600 text-white">
                             <th class="p-4 text-left border border-gray-300">Name</th>
-                            <th class="p-4 text-left border border-gray-300">Password</th>
                             <th class="p-4 text-left border border-gray-300">Email</th>
                             <th class="p-4 text-left border border-gray-300">Action</th>
                         </tr>
@@ -77,7 +77,6 @@
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr class='hover:bg-gray-100'>
                                 <td class='p-4 border border-gray-300'>" . $row["username"] . "</td>
-                                <td class='p-4 border border-gray-300'>" . $row["password"] . "</td>
                                 <td class='p-4 border border-gray-300'>" . $row["email"] . "</td>
                                 <td class='p-4 border border-gray-300'>
                                     <button onclick='openModal(" . $row["user_id"] . ", " . json_encode($row["username"]) . ", " . json_encode($row["email"]) . ")' class='bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 transition'>
@@ -108,6 +107,8 @@
                 <input type="text" name="username" id="editUsername" class="w-full border p-2 rounded mb-4">
                 <label class="block">Email:</label>
                 <input type="email" name="email" id="editEmail" class="w-full border p-2 rounded mb-4">
+                <label class="block">New Password:</label>
+                <input type="password" name="password" id="editPassword" class="w-full border p-2 rounded mb-4" placeholder="Leave blank to keep current password">
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Update</button>
                 <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
             </form>
@@ -119,6 +120,7 @@
             document.getElementById("editUserId").value = id;
             document.getElementById("editUsername").value = username;
             document.getElementById("editEmail").value = email;
+            document.getElementById("editPassword").value = "";
             document.getElementById("editModal").style.display = "block";
         }
         function closeModal() {

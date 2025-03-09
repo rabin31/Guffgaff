@@ -7,7 +7,7 @@
         <nav class="px-2 py-4 w-full z-20 top-0 left-0">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="index.php" class="flex items-center">
-                    <img src="php/images/guffgaff_logo_white.png" class="h-6 mr-3 sm:h-9" alt="GuffGaff Logo Logo">
+                    <img src="php/images/guffgaff_logo_white.png" class="h-6 mr-3 sm:h-10" alt="GuffGaff Logo Logo">
                 </a>
                 <div class="flex md:order-2">
                     <a href="Auth/auth.php?auth=login">
@@ -45,7 +45,7 @@
                     <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
                         <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl sm:leading-none">
                             Welcome to<br class="hidden md:block" />
-                            best Chat plateform
+                            best Chat platform
                             <span class="inline-block text-[#FF8000]">GuffGaff</span>
                         </h2>
                         <p class="text-base text-gray-400 md:text-lg">
@@ -70,7 +70,7 @@
                             <div class="px-3 text-xs text-gray-100 sm:text-sm">or</div>
                             <hr class="flex-1 border-gray-300" />
                         </div>
-                        <a href="Auth/auth.php?auth=login" class="inline-flex items-center justify-center w-full h-12 px-6 font-semibold transition duration-200 bg-white border border-gray-300 rounded md:w-auto hover:bg-gray-100 focus:shadow-outline focus:outline-none">
+                        <a href="Auth/auth.php?auth=signup" class="inline-flex items-center justify-center w-full h-12 px-6 font-semibold transition duration-200 bg-white border border-gray-300 rounded md:w-auto hover:bg-gray-100 focus:shadow-outline focus:outline-none">
                             Sign Up with Email
                         </a>
                     </div>

@@ -57,9 +57,6 @@ if (!isset($_SESSION['unique_id'])) {
 
                 <div><span class="text-sm text-gray-400">Maximum 90 Latter allowed</span></div>
               </div>
-              <div class="flex justify-between">
-                <a href="#" class="text-sm  hover:underline text-blue-500">Lost Password?</a>
-              </div>
               <button type="submit" name="update_profile" class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Edit
                 now</button>
 
