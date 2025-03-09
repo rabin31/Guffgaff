@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO contact_us (name, email, message) VALUES ('$name', '$email', '$message')";
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Message sent successfully!'); window.location.href='index.php';</script>";
+        echo "<script>alert('Message sent successfully!'); window.location.href='contact-us.php';</script>";
     } else {
         echo "<script>alert('Error sending message. Please try again.'); window.location.href='contact-us.php';</script>";
     }

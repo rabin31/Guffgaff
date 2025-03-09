@@ -2,7 +2,7 @@
   session_start();
   include_once "config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: /sendbox");
+   
   }
 ?>
 <?php
